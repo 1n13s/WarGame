@@ -8,21 +8,25 @@ class Cards():
             value (str): The value of the card
             suit (str): The suit of the card
         """
-        self._value_print=value
-        self._suit=suit
-        self._value=self.value_int(value)
-    
-    def get_card(self):
 
-        print(f"A {self._value_print} of {self._suit}")
+        self.__value_print=value
+        self.__suit=suit
+        self.__value=self.value_int(value)
     
-    @staticmethod
-    def compare_cards(value_card_one: int, value_card_two: int):
-        if value_card_one>value_card_two:
-            return 1
-        elif value_card_one<value_card_two:
-            return 2
-        else: return 3
+    def print_card(self) -> None:
+        """Prints the card
+        """
+
+        print(f"{self.__suit} {self.__value_print}")
+    
+    def get_value(self) -> int:
+        """Gets the value of the card
+
+        Returns:
+            int: The value of the card
+        """
+
+        return self.__value
 
     @staticmethod
     def value_int(value_str: str) -> int:
@@ -44,3 +48,11 @@ class Cards():
         if not values.get(value_str,False):
             return int(value_str)
         else: return values.get(value_str)
+
+    @staticmethod
+    def compare_cards(value_card_one: int, value_card_two: int):
+        if value_card_one>value_card_two:
+            return 1
+        elif value_card_one<value_card_two:
+            return 2
+        else: return 3
