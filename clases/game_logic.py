@@ -2,6 +2,7 @@ from clases.cards import Cards
 from clases.deck import Deck
 from clases.player import Player
 from tools.tools import *
+import os
 
 class GameLogic():
     """This class manages the logic of the game
@@ -60,6 +61,7 @@ class GameLogic():
 
             else: print("Draw")
 
+            os.system('cls')
             if player_1.validate_loose() or player_2.validate_loose():
                 self.__end_game=True
         
