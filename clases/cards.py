@@ -49,10 +49,3 @@ class Cards():
             return int(value_str)
         else: return values.get(value_str)
 
-    @staticmethod
-    def compare_cards(value_card_one: int, value_card_two: int):
-        if value_card_one>value_card_two:
-            return 1
-        elif value_card_one<value_card_two:
-            return 2
-        else: return 3

@@ -30,6 +30,18 @@ class Deck():
 
         return len(self.__deck)
 
+    def add_card(self, card: list[Cards]) -> None:
+        self.__deck.extend(card)
+
+    def obtain_card(self) -> Cards:
+        """Obtains a card from the deck
+
+        Returns:
+            Cards: The card obtained
+        """
+
+        return self.__deck.pop()
+
     def divide_complete_deck(self) -> Dict[str,List[Cards]]:
         """Divides a complete deck
 
@@ -37,6 +49,7 @@ class Deck():
             Dict[str,List[Cards]]: A dict with the deck of player_1 and player_2
         """
         
+        print("Dividiendo el maso inicial...")
         random.shuffle(self.__deck)
         return {
                 "player_1": self.__deck[:(len(self.__deck)//2)],

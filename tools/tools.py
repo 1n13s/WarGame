@@ -10,17 +10,3 @@ def create_complete_deck():
         ]
         deck_cards.extend([Cards("Jocker",""),Cards("Jocker","")])
         return deck_cards
-        
-
-def divide_deck(deck:list[Cards]):
-        random.shuffle(deck)
-        deck_player_1 = deck[:(len(deck)//2)]
-        deck_player_2 = deck[(len(deck)//2):]
-        return {
-                "player_1": deck_player_1,
-                "player_2": deck_player_2
-        }
-
-def print_deck(deck:list[Cards]):
-        for card in deck:
-                card.get_card()
